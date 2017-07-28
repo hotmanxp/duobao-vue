@@ -1,6 +1,8 @@
 <template>
   <div class="index-page page">
-   <div class="notice-bar"> <span class="tips" v-for="tip in notice">{{ tip }}</span> </div>
+   <div class="notice-bar">
+     <span class="tips" v-for="tip in notice">{{ tip }}</span>
+   </div>
    <div class="banner-part">
    </div>
   </div>
