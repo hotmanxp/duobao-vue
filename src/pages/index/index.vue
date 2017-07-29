@@ -1,8 +1,10 @@
 <template>
   <div class="index-page page">
-   <div class="notice-bar"> <span class="tips" v-for="tip in notice">{{ tip }}</span> </div>
-   <div class="banner-part>
-    <img src='./assets/logo.png' />
+    <div class="notice-bar"> 
+      <span class="tips" v-for="tip in notice">{{ tip }}</span>
+    </div>
+   <div class="banner-part">
+    <img src="../../assets/banner-1.jpg" />
    </div>
   </div>
 </template>
