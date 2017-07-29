@@ -20,6 +20,15 @@ body {
   margin: 0;
 }
 
+html {
+  -woz-box-sizing:border-box;
+  box-sizing:border-box;
+}
+
+*, *:before, *:after {
+  box-sizing:inherit;
+}
+
 .page {
   padding-top: @menu-bar-height;
 }

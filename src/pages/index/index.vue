@@ -18,12 +18,12 @@
     <div class="record-part">
       <div class="tab-part">
         <div :class="classnames('tab', {active: currentTab === 'participate'})" @click="changeTab('participate')">
-          <span class="icon"></span>
+          <span class="icon iconfont icon-dingdan"></span>
           <span class="text">参与记录</span>
         </div>
         <div class="divide"></div>
         <div :class="classnames('tab', {active: currentTab === 'win'})" @click="changeTab('win')">
-          <span class="icon"></span>
+          <span class="icon iconfont icon-jiangpai"></span>
           <span class="text">中奖记录</span>
         </div>
       </div>
