@@ -25,7 +25,7 @@
     </div>
     <div class="tab-content">
       <div class='record-list'>
-        <div class="record-item" v-for="record in topList">
+        <div class="record-item" v-for="(record, key) in topList" :key="key">
           <div class="timeStamp">
             <div class="date">{{record.date}}</div>
             <div class="time">{{record.time}}</div>
