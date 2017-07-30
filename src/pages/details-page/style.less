@@ -31,9 +31,11 @@
 
   .tab-part {
     display: flex;
-    height: @px*134;
+    height: 44px;
     align-items: center;
+    position: relative;
     background-color: @darkGray;
+    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.8);
 
     .tab {
       vertical-align: middle;
@@ -41,6 +43,39 @@
       text-align: center;
       font-size: 16px;
       color: white;
+      line-height: 44px;
+      &.active {
+        background-color: @pkRed;
+        width: @px*700;
+        flex: none;
+      }
+    }
+
+    .top-line {
+      height: 5px;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      background-color: @darkGray;
+    }
+
+    .triangle {
+      height: 0;
+      width: 0;
+      border-top: 22px;
+      border-left: 10px;
+      border-right: 10px;
+      border-bottom: 22px;
+      border-style: solid;
+
+      &.a {
+        border-color: transparent @pkRed @pkRed transparent;
+      }
+      &.b {
+        border-color: transparent transparent @pkRed @pkRed;
+      }
     }
   }
 
@@ -49,6 +84,7 @@
     color: @white;
     max-height: 600*@px;
     overflow-y: scroll;
+    box-shadow: inset 0 -17px 25px -8px rgba(0, 0, 0, 0.3);
     .record-item {
         height: 170*@px;
         display: flex;
@@ -104,6 +140,7 @@
     align-items: center;
     justify-content: center;
 
+
     .range {
       color: #cb9c28;
       width: 200*@px;
@@ -119,6 +156,8 @@
 
   .history-part {
     padding-top: 10px;
+    position: relative;
+    z-index: 10;
     background-color: #f3f3f3;
 
     .section-divider {
@@ -129,6 +168,7 @@
   .action-part {
     position: fixed;
     background-color: @darkGray;
+    z-index: 1000;
     left: 0;
     bottom: 0;
     height: @px*125;

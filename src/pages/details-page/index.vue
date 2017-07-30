@@ -12,10 +12,13 @@
       </div>
     </div>
     <div class="tab-part">
-      <div class="tab">
+      <div class="top-line"></div>
+      <div class="triangle a" ></div>
+      <div class="tab active">
         <span class="iconfont icon icon-jiangpai" />
         <span>战神榜</span>
       </div>
+      <div class="triangle b" ></div>
       <div class="tab">
         <span>夺宝规则</span>
       </div>
