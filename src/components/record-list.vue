@@ -1,6 +1,6 @@
 <template>
   <div class="record-container">
-        <div class="record" v-for="record in records">
+        <div class="record" v-for="(record, idx) in records" :key="record.src + idx">
           <div class="timeStamp">
             <div class="date">{{record.date}}</div>
             <div class="time">{{record.time}}</div>

@@ -5,7 +5,7 @@
       <img src="../../assets/banner-1.jpg" />
     </div>
     <div class="product-info-part">
-      <div v-for="pro in products" class="product-box">
+      <div v-for="pro in products" class="product-box" :key="pro.prodSrc">
         <img :src="pro.prodSrc" />
         <div class="price-info">
           <span>多报价：Y</span>
