@@ -26,25 +26,7 @@
         </div>
       </div>
       <div class="tab-content-divider"></div>
-      <div class="record-container">
-        <div class="record" v-for="record in records">
-          <div class="timeStamp">
-            <div class="date">{{record.date}}</div>
-            <div class="time">{{record.time}}</div>
-          </div>
-          <img class="avator" :src="record.src" />
-          <div class="content">
-            <div class="user-info">
-              <span>{{record.userInfo.nickName}}</span>
-              <span>({{record.userInfo.from}})</span>
-              </div>
-            <div class="win-record">
-              <span>夺得</span><span class="hight-light">{{record.num}}</span><span>单 - </span>
-              <span class="hight-light">{{record.recordContent}}</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <record-list :records="records" />
     </div>
     <div class="notice-bottom">
       <span>下期开奖时间：</span>
@@ -57,6 +39,7 @@
 <script>
 import classnames from 'classnames'
 import noticeBar from '../../components/top-notice'
+import recordList from '../../components/record-list'
 
 let getProduct = (num) => {
   return Array.from({length: num}).map((i, idx) => ({
@@ -101,7 +84,8 @@ export default {
     }
   },
   components: {
-    noticeBar
+    noticeBar,
+    recordList
   }
 }
 </script>

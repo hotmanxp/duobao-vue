@@ -56,10 +56,13 @@
       </div>
     </div>
     <div class="history-part">
-      <menu-items text="战胜排行榜" icon="jiangpai" toLink='top' />
-      <menu-items text="历史交战记录" icon="jiangpai" toLink='history' />
+      <div>
+        <menu-items text="战胜排行榜" icon="jiangpai" toLink='top' />
+        <menu-items text="历史交战记录" icon="jiangpai" toLink='history' />
+      </div>
       <div class="section-divider" ></div>
       <menu-items text="最近参战记录" icon="shijian" />
+      <record-list :records="latestRecords"/>
     </div>
     <div class="action-part">
       <div class="action-btn buy-little">买小 (1-55)</div>
@@ -72,6 +75,7 @@
 // import classnames from 'classnames'
 import noticeBar from '../../components/top-notice'
 import menuItems from '../../components/menu-item'
+import recordList from '../../components/record-list'
 let getTops = (num) => {
   return Array.from({length: num}).map((i, idx) => ({
     num: idx,
@@ -85,12 +89,27 @@ let getTops = (num) => {
     src: `../../static/img/p${idx % 6 + 1}.png`
   }))
 }
+let getLastest = (num) => {
+  return Array.from({length: num}).map((i, idx) => ({
+    num: idx,
+    text: '刚刚参与了',
+    userInfo: {
+      nickName: '老亚平',
+      from: '山东青岛'
+    },
+    date: '2017/06/30',
+    time: '11:49:59',
+    src: `../../static/img/p${idx + 1}.png`
+  }))
+}
 export default {
   data () {
     let topList = getTops(10)
+    let latestRecords = getLastest(5)
     return {
       title: '100元联通充值卡',
       price: '55.00',
+      latestRecords,
       competition: {
         lastStart: 56,
         lastEnd: 110,
@@ -100,6 +119,6 @@ export default {
       topList
     }
   },
-  components: { noticeBar, menuItems }
+  components: { noticeBar, menuItems, recordList }
 }
 </script>
