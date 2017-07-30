@@ -122,3 +122,130 @@
     }
   }
 }
+
+.buy-action {
+  position: fixed;
+  font-size: 14px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 99999;
+
+  .cover {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8)
+  }
+
+  .action-pannel {
+    position: absolute;
+    bottom: -1300*@px;
+    left: 0;
+    transition: bottom 0.3s linear;
+    background-color: @white;
+    width: 100%;
+    text-align: center;
+    &.show {
+      bottom: 0;
+    }
+
+    .close {
+      position: absolute;
+      top: -200*@px;
+      right: @px*80;
+      color: @white;
+      width: @px*120;
+
+      .close-btn {
+        width: 100%;
+        height: 120*@px;
+        text-align: center;
+        line-height: 120*@px;
+        border-radius: 60*@px;
+        border: 1px solid @white;
+      }
+
+      .vertical-line {
+        width: 1px;
+        height: 80*@px;
+        margin: 0 auto;
+        background-color: @white;
+      }
+    }
+
+    .pannel-bar {
+      background-color: @mainColor;
+      color: @white;
+      font-size: 14px;
+      line-height: @px*130;
+    }
+    .tips {
+      line-height: 100*@px;
+      font-size: 14px;
+    }
+
+    .step {
+      display: flex;
+      justify-content: center;
+
+      .num-input {
+        width: 300*@px;
+        border: none;
+        margin: 0 10px;
+        color: @mainColor;
+        text-align: center;
+        border-bottom: 1px solid @mainColor;
+      }
+      .btn {
+        height: 100*@px;
+        width: 100*@px;
+        line-height: 100*@px;
+        background-color: @mainColor;
+        border-radius: 5px;
+        color: @white;
+        font-size: 18px;
+
+        &.disabled {
+          background-color: #f5cbaa;
+        }
+      }
+    }
+
+    .count-btns {
+      display: flex;
+      padding: 10px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      span {
+        line-height: 90*@px;
+        width: 250*@px;
+        border: 1px solid @mainColor;
+        border-radius: 45*@px;
+        text-align: center;
+        margin: 5px;
+      }
+    }
+
+    .totle {
+      .tips {
+        font-weight: 800;
+      }
+      .money {
+        color: @pkRed;
+      }
+    }
+
+    .pay-btn {
+      line-height: 120*@px;
+      border-radius: 60*@px;
+      text-align: center;
+      color: @white;
+      background-color: @wechatGreen;
+      margin: 20px 15px 10px;
+    }
+  }
+}

@@ -68,9 +68,10 @@
       <record-list :records="latestRecords"/>
     </div>
     <div class="action-part">
-      <div class="action-btn buy-little">买小 (1-55)</div>
-      <div class="action-btn buy-big">买大 (56-110)</div>
+      <div class="action-btn buy-little" @click="openPanel('little')">买小 (1-55)</div>
+      <div class="action-btn buy-big" @click="openPanel('big')">买大 (56-110)</div>
     </div>
+    <buy-pennal :price="25" :open="buyPannelOpen" :onClose="() => closePannel()"/>
   </div>
 </template>
 
@@ -79,6 +80,7 @@
 import noticeBar from '../../components/top-notice'
 import menuItems from '../../components/menu-item'
 import recordList from '../../components/record-list'
+import buyPennal from './buy'
 let getTops = (num) => {
   return Array.from({length: num}).map((i, idx) => ({
     num: idx,
@@ -112,6 +114,7 @@ export default {
     return {
       title: '100元联通充值卡',
       price: '55.00',
+      buyPannelOpen: false,
       latestRecords,
       competition: {
         lastStart: 56,
@@ -122,6 +125,14 @@ export default {
       topList
     }
   },
-  components: { noticeBar, menuItems, recordList }
+  methods: {
+    openPanel: function (type) {
+      this.buyPannelOpen = true
+    },
+    closePannel: function (type) {
+      this.buyPannelOpen = false
+    }
+  },
+  components: { noticeBar, menuItems, recordList, buyPennal }
 }
 </script>
