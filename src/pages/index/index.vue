@@ -1,8 +1,6 @@
 <template>
   <div class="index-page page">
-    <div class="notice-bar">
-      <span class="tips" v-for="tip in notice">{{ tip }}</span>
-    </div>
+    <notice-bar :notices="notices" />
     <div class="banner-part">
       <img src="../../assets/banner-1.jpg" />
     </div>
@@ -58,6 +56,8 @@
 
 <script>
 import classnames from 'classnames'
+import noticeBar from '../../components/top-notice'
+
 let getProduct = (num) => {
   return Array.from({length: num}).map((i, idx) => ({
     prodSrc: `../../static/img/p${idx + 1}.png`,
@@ -82,8 +82,9 @@ export default {
   data () {
     let products = getProduct(6)
     let records = getRecords(6)
+    let notices = ['恭喜 胡柚获胜2单', '恭喜 胡柚获胜3单', '恭喜 胡柚获胜4单']
     return {
-      notice: ['恭喜 胡柚获胜2单', '恭喜 胡柚获胜3单', '恭喜 胡柚获胜4单'],
+      notices,
       products,
       records,
       currentTab: 'win',
@@ -98,6 +99,9 @@ export default {
     changeTab: function (tab) {
       if (tab !== this.currentTab) this.currentTab = tab
     }
+  },
+  components: {
+    noticeBar
   }
 }
 </script>
