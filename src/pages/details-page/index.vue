@@ -64,7 +64,7 @@
         <menu-items text="历史交战记录" icon="jiangpai" toLink='history' />
       </div>
       <div class="section-divider" ></div>
-      <menu-items text="最近参战记录" icon="shijian" />
+      <div><menu-items text="最近参战记录" icon="shijian" /></div>
       <record-list :records="latestRecords"/>
     </div>
     <div class="action-part">
