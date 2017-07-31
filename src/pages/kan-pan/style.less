@@ -1,0 +1,51 @@
+.kan-pan-page {
+  position: relative;
+  padding-top: @menu-bar-height + @px*110;
+  .title-part {
+    position: fixed;
+    width: 100%;
+    top: @menu-bar-height;
+    left: 0;
+    display: flex;
+    align-items: center;
+    .cell {
+      line-height: 110*@px;
+      color: @white;
+      background-color: @pkRed;
+    }
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    height: @px*120;
+    border-bottom: 1px solid @itemBorder;
+  }
+  .cell {
+    flex: 1;
+    text-align: center;
+  }
+  .time {
+    font-size: 10px;
+    color: #7f7f7f;
+  }
+  .number {
+    color: #323232;
+  }
+  .btn {
+    display: block;
+    width: 160*@px;
+    line-height: 20px;
+    text-align: center;
+    margin: 0 auto;
+    color: @white;
+    border-radius: 2px;
+    &.red {
+      background-color: @pkRed;
+    }
+    &.yellow {
+      background-color: @mainColor;
+    }
+  }
+}
