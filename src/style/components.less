@@ -249,3 +249,57 @@
     }
   }
 }
+
+.tabs-cmp {
+  display: flex;
+  text-align: center;
+  font-size: 14px;
+}
+
+.tabs-cmp.history-tab {
+  .tab {
+    line-height: @tabHight;
+    color: @mainColor;
+    background-color: @darkGray;
+    flex: 1;
+    text-align: center;
+
+    &.active {
+      color: @white;
+      background-color: @mainColor;
+    }
+  }
+}
+
+.tabs-cmp.triangle-tab {
+  justify-content: space-around;
+  position: relative;
+  background-color: @white;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: @mainColor;
+  }
+  .tab {
+    line-height: @tabHight;
+    color: #7f7f7f;
+    text-align: center;
+    position: relative;
+    &.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      margin-left: -8px;
+      width: 0;
+      height: 0;
+      border-width: 8px;
+      border-style: solid;
+      border-color:transparent transparent @mainColor transparent;
+    }
+  }
+}
