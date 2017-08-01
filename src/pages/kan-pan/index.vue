@@ -18,25 +18,25 @@
 </template>
 
 <script>
-const makeList = (num) => {
-  return Array.from({length: num}).map((i, idx) => ({
-    date: `2017/06/${10 + idx}`,
-    time: '11:20:20',
-    number: 51125,
-    divide56: {
-      num: 52,
-      color: 'red'
-    },
-    divide110: {
-      num: 12,
-      color: 'yellow'
-    }
-  }))
+import {make} from '@/lib/mock'
+const temp = {
+  date: `2017/06/25`,
+  time: '11:20:20',
+  number: 51125,
+  divide56: {
+    num: 52,
+    color: 'red'
+  },
+  divide110: {
+    num: 12,
+    color: 'yellow'
+  }
 }
+const list = make(temp, 25)
 export default {
   data () {
     return {
-      list: makeList(25)
+      list
     }
   }
 }
