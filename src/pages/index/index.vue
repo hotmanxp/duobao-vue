@@ -38,33 +38,30 @@
 
 <script>
 import classnames from 'classnames'
+import {make} from '@/lib/mock'
 import noticeBar from '../../components/top-notice'
 import recordList from '../../components/record-list'
 
-let getProduct = (num) => {
-  return Array.from({length: num}).map((i, idx) => ({
-    prodSrc: `../../static/img/p${idx + 1}.png`,
-    price: idx + 50
-  }))
+const productTemp = {
+  prodSrc: idx => `../../static/img/p${idx + 1}.png`,
+  price: idx => idx + 50
 }
-let getRecords = (num) => {
-  return Array.from({length: num}).map((i, idx) => ({
-    num: idx,
-    recordContent: '100元联通充值卡',
-    userInfo: {
-      nickName: '老亚平',
-      from: '山东青岛'
-    },
-    date: '2017/06/30',
-    time: '11:49:59',
-    src: `../../static/img/p${idx + 1}.png`
-  }))
+let products = make(productTemp, 6)
+let recordTemp = {
+  num: idx => idx,
+  recordContent: '100元联通充值卡',
+  userInfo: {
+    nickName: '老亚平',
+    from: '山东青岛'
+  },
+  date: '2017/06/30',
+  time: '11:49:59',
+  src: idx => `../../static/img/p${idx % 6 + 1}.png`
 }
+let records = make(recordTemp, 10)
 export default {
   name: 'index-page',
   data () {
-    let products = getProduct(6)
-    let records = getRecords(6)
     let notices = ['恭喜 胡柚获胜2单', '恭喜 胡柚获胜3单', '恭喜 胡柚获胜4单']
     return {
       notices,

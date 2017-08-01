@@ -6,6 +6,9 @@ const make = (template, num) => {
       if (Array.isArray(newTemplate[field])) {
         newTemplate[field] = newTemplate[field][idx % newTemplate[field].length]
       }
+      if (typeof newTemplate[field] === 'function') {
+        newTemplate[field] = newTemplate[field](idx)
+      }
     }
     return Object.assign({}, {id}, newTemplate)
   })

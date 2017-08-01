@@ -77,40 +77,37 @@
 
 <script>
 // import classnames from 'classnames'
+import {make} from '@/lib/mock'
 import noticeBar from '../../components/top-notice'
 import menuItems from '../../components/menu-item'
 import recordList from '../../components/record-list'
 import buyPennal from './buy'
-let getTops = (num) => {
-  return Array.from({length: num}).map((i, idx) => ({
-    num: idx,
-    recordContent: `刚刚获胜夺得商品${idx + 1}单`,
-    userInfo: {
-      nickName: '老亚平',
-      from: '山东青岛'
-    },
-    date: '2017/06/30',
-    time: '11:49:59',
-    src: `../../static/img/p${idx % 6 + 1}.png`
-  }))
+let topTemp = {
+  num: idx => idx,
+  recordContent: idx => `刚刚获胜夺得商品${idx + 1}单`,
+  userInfo: {
+    nickName: '老亚平',
+    from: '山东青岛'
+  },
+  date: '2017/06/30',
+  time: '11:49:59',
+  src: idx => `../../static/img/p${idx % 6 + 1}.png`
 }
-let getLastest = (num) => {
-  return Array.from({length: num}).map((i, idx) => ({
-    num: idx,
-    text: '刚刚参与了',
-    userInfo: {
-      nickName: '老亚平',
-      from: '山东青岛'
-    },
-    date: '2017/06/30',
-    time: '11:49:59',
-    src: `../../static/img/p${idx + 1}.png`
-  }))
+let topList = make(topTemp, 20)
+let latestTemp = {
+  num: idx => idx,
+  text: '刚刚参与了',
+  userInfo: {
+    nickName: '老亚平',
+    from: '山东青岛'
+  },
+  date: '2017/06/30',
+  time: '11:49:59',
+  src: idx => `../../static/img/p${idx % 6 + 1}.png`
 }
+let latestRecords = make(latestTemp, 15)
 export default {
   data () {
-    let topList = getTops(10)
-    let latestRecords = getLastest(5)
     return {
       title: '100元联通充值卡',
       price: '55.00',
