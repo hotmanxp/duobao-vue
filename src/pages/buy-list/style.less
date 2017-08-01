@@ -1,0 +1,83 @@
+.buy-list-page {
+  .list-container {
+    max-height: 10vh;
+    font-size: 12px;
+  }
+  .item {
+    padding-top: 10px;
+    &:nth-of-type(odd) {
+      background-color: @white;
+    }
+
+    .info-part {
+      display: flex;
+
+      .pic-part {
+        width: @px*380;
+        padding-left: 5px;
+
+        .pic {
+          display: block;
+          width: 360*@px;
+          height: 180*@px;
+        }
+
+        .label {
+          width: 288*@px;
+          height: 70*@px;
+          background-repeat: no-repeat;
+          background-position: bottom left;
+          background-size: @px*288 @px*30;
+          color: @white;
+          text-align: center;
+          margin: 0 auto;
+
+          &.unwin {
+            &:after {
+              content: '未中奖';
+            }
+            background-color: #a9a9a9;
+            background-image: url(../../assets/unwin-label.png);
+          }
+
+          &.waiting {
+            &:after {
+              content: '未中奖';
+            }
+            background-color: #cb9c28;
+            background-image: url(../../assets/waiting-label.png);
+          }
+
+          &.win {
+            &:after {
+              content: '未中奖';
+            }
+            background-color: @pkRed;
+            background-image: url(../../assets/win_label.png);
+          }
+        }
+      }
+
+      .detail-part {
+        padding-left: 10px;
+      }
+    }
+
+    .action-part {
+      height: 120*@px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding-right: 10px;
+      
+      .btn {
+        width: @px*304;
+        line-height: @px*70;
+        border: 1px solid @mainColor;
+        text-align: center;
+        border-radius: 35*@px;
+        color: @mainColor; 
+      }
+    }
+  }
+}
