@@ -7,6 +7,7 @@ import KanPan from '@/pages/kan-pan'
 import Personal from '@/pages/personal-page'
 import BuyList from '@/pages/buy-list'
 import BetHistory from '@/pages/bet-history'
+import DuoBaoHistory from '@/pages/duobao-list'
 
 Vue.use(Router)
 
@@ -46,6 +47,11 @@ export default new Router({
       path: '/bet-history',
       name: 'BetHistory',
       component: BetHistory
+    },
+    {
+      path: '/duobao-history',
+      name: 'DuoBaoHistory',
+      component: DuoBaoHistory
     }
   ]
 })

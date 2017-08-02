@@ -4,6 +4,33 @@
       line-height: @px*96;
       background-color: @white;
       margin-bottom: 1px;
+      padding-left: 10px;
+    }
+
+    .info-part {
+      margin-bottom: 10px;
+      display: flex;
+      padding: 10px;
+
+      .details {
+        position: relative;
+        flex: 1;
+      }
+
+      .go-details {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      .avator {
+        padding-right: 10px;
+        img {
+          display: block;
+          width: 144*@px;
+          height: 144*@px;
+          border-radius: 50%;
+        }
+      }
     }
   }
 }

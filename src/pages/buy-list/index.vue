@@ -32,7 +32,7 @@
 <script>
 import {make} from '@/lib/mock'
 const template = {
-  type: ['win', 'unwin', 'waiting'],
+  type: ['win', 'unwin', 'waiting', true],
   picSrc: '../../static/img/p1.png',
   title: '联通100元充值卡',
   canyu: 'tyy',
