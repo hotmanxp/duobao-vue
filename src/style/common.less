@@ -40,6 +40,9 @@ html {
   padding-top: @menu-bar-height;
 }
 
+.main-cl {
+  color: @mainColor;
+}
 .yellow-cl {
   color: @yellow;
 }
@@ -61,6 +64,17 @@ html {
 .flex {
   display: flex;
   align-items: center;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.avator (@d) {
+  display: block;
+  border-radius: 50%;
+  width: @d * @px;
+  height: @d * @px;
 }
 
 

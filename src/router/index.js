@@ -9,6 +9,7 @@ import Personal from '@/pages/personal-page'
 import BuyList from '@/pages/buy-list'
 import BetHistory from '@/pages/bet-history'
 import DuoBaoHistory from '@/pages/duobao-list'
+import WinTop from '@/pages/win-top'
 
 Vue.use(Router)
 
@@ -66,6 +67,12 @@ const routes = [
     cn: '清单明细',
     name: 'DuoBaoHistory',
     component: DuoBaoHistory
+  },
+  {
+    path: '/win-top',
+    cn: '排行榜',
+    name: 'winTop',
+    component: WinTop
   }
 ]
 export default new Router({

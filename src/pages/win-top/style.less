@@ -1,0 +1,56 @@
+.win-top-page {
+  .history-tab {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  .item {
+    background-color: @white;
+    line-height: @px*220;
+    &:nth-child(odd) {
+      background-color: #f3f3f3;
+    }
+    img {
+      .avator(144);
+      border: 2px solid @mainColor;
+    }
+
+    &.jinpai {
+      background-color: #fef1bd;
+    }
+
+    &.yinpai {
+      background-color: #ebfaff;
+    }
+
+    &.tongpai {
+      background-color: #f2e2e2;
+    }
+
+    .rand {
+      text-align: center;
+      color: @mainColor;
+      font-size: 18px;
+      width: @px*144;
+      margin-right: 10px;
+      .iconfont {
+        font-size: 24px;
+      }
+    }
+
+    .name {
+      margin: 0 10px;
+      color: #d6a628;
+    }
+  }
+  .icon-jinpai {
+    color: #fde152;
+  }
+  .icon-yinpai {
+    color: #067fce;
+  }
+  .icon-tongpai {
+    color: #04a38d;
+  }
+}
