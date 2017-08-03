@@ -6,6 +6,17 @@
       width: 100%;
     }
   }
+
+  .btn {
+    text-align: center;
+    color: @white;
+    background-color: @mainColor;
+    &.disabled {
+      background-color: #efc19d;
+      pointer-events: none;
+    }
+  }
+
   .form {
     padding-top: 20vh;
     padding: @px*154 20px 20px;
@@ -28,24 +39,21 @@
         width: @px * 650;
         display: block;
         border-radius: 3px 0 0 3px;
+        outline: none;
       }
 
       .send-btn {
-        background-color: @mainColor;
         line-height: @px * 120;
-        color: @white;
-        text-align: center;
         border: none;
         border-radius: 0 3px 3px 0;
+        
       }
     }
   }
 
   .confirm-btn {
     line-height: @px * 120;
-    text-align: center;
-    background-color: @mainColor;
-    color: @white;
+    
     font-size: 16px;
     margin-top: @px * 100;
     border-radius: 5px;
