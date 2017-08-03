@@ -10,6 +10,8 @@ import BuyList from '@/pages/buy-list'
 import BetHistory from '@/pages/bet-history'
 import DuoBaoHistory from '@/pages/duobao-list'
 import WinTop from '@/pages/win-top'
+import BindMobile from '@/pages/bind-mobile'
+import Setting from '@/pages/setting'
 
 Vue.use(Router)
 
@@ -73,6 +75,18 @@ const routes = [
     cn: '排行榜',
     name: 'winTop',
     component: WinTop
+  },
+  {
+    path: '/bind-mobile',
+    cn: '手机绑定',
+    name: 'BindMobile',
+    component: BindMobile
+  },
+  {
+    path: '/setting',
+    cn: '设置',
+    name: 'Setting',
+    component: Setting
   }
 ]
 export default new Router({
