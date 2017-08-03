@@ -10,7 +10,7 @@ import {routes} from '@/router/index.js'
 export default {
   data () {
     return {
-      routes
+      routes: routes.slice(1, routes.length)
     }
   }
 }
