@@ -6,7 +6,7 @@
           <span>产品单号:</span>
           <span class="red-cl">{{item.No}}</span>
         </div>
-        <div class="info-part back-white">
+        <div class="info-part bg-white">
           <div class="avator">
             <img :src="item.avator" />
           </div>

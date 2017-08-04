@@ -1,6 +1,6 @@
 <template>
   <div class='duobao-list-page page'>
-    <div class="title-part back-white">夺宝记录</div>
+    <div class="title-part bg-white">夺宝记录</div>
     <div class="list-container">
       <div class="item gray-cl" v-for="item in list" :key="item.id">
         <div class="btn">查看号码</div>

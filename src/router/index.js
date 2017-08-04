@@ -12,6 +12,7 @@ import DuoBaoHistory from '@/pages/duobao-list'
 import WinTop from '@/pages/win-top'
 import BindMobile from '@/pages/bind-mobile'
 import Setting from '@/pages/setting'
+import Rules from '@/pages/rules'
 
 Vue.use(Router)
 
@@ -87,6 +88,12 @@ const routes = [
     cn: '设置',
     name: 'Setting',
     component: Setting
+  },
+  {
+    path: '/rules',
+    cn: '夺宝规则',
+    name: 'Rules',
+    component: Rules
   }
 ]
 const ROUTES = routes.reduce((acc, item) => ({...acc, [item.name]: item}), {})
