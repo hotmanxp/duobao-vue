@@ -1,6 +1,6 @@
 <template>
   <div class="routes-page page">
-    <router-link class="link-btn" tag="div" v-for="route in  routes" :key="route.name" :to="route.path">{{route.cn}}</router-link>
+    <router-link class="link-btn" tag="div" v-for="route in  routes" :key="route.name" :to="{name: route.name, params: {title: route.cn}}">{{route.cn}}</router-link>
   </div>
 </template>
 

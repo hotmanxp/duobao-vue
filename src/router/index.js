@@ -89,7 +89,8 @@ const routes = [
     component: Setting
   }
 ]
+const ROUTES = routes.reduce((acc, item) => ({...acc, [item.name]: item}), {})
 export default new Router({
   routes
 })
-export { routes }
+export { routes, ROUTES }
