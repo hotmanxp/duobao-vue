@@ -1,0 +1,182 @@
+@fix1024: 1240/1020;
+
+.details-popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding-top: @menu-bar-height;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+
+  .cover {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    
+  }
+ 
+
+  .battle-content {
+    position: absolute;
+    background-color: #f2f2f2;
+    width: 928 *@px*@fix1024;
+    height: 1360 * @px*@fix1024;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 20 * @px*@fix1024; 
+    margin: auto;
+    overflow: hidden;
+
+    .pk-part {
+      align-items: flex-start;
+      padding-bottom: 10px;
+    }
+  }
+
+  .title {
+    line-height: @px*@fix1024 * 115;
+    padding-left: 10px;
+    font-size: 16px;
+  }
+
+  .pk-pic {
+    width: @px*@fix1024 * 142;
+    height: @px*@fix1024 * 585;
+    background-image: url(../../assets/vs.png);
+    background-size: @px*@fix1024*142 @px*@fix1024*590;
+    background-repeat: no-repeat;
+  }
+
+  .triangle (@fontCl, @backCl) {
+    position: absolute;
+    top: 0;
+    width: 0;
+    line-height: 0;
+    height: 0;
+    border-top: @px*@fix1024*48;
+    border-bottom: @px*@fix1024*48;
+    border-left: @px*@fix1024*23;
+    border-right: @px*@fix1024*23;
+    border-color: @backCl @fontCl @fontCl @backCl;
+    border-style: solid; 
+  }
+
+  .peple {
+    .head-bar {
+      background-color: @mainColor;
+      line-height: @px*@fix1024 * 96;
+      height: @px*@fix1024 *96;
+      color: @white;
+      font-size: 16px;
+      text-align: center;
+      position: relative;
+    }
+    &.home {
+      .head-bar {
+        padding-left: @px*@fix1024*46;
+        .padding-tri {
+          left: 0;
+          .triangle(@mainColor,@pkRed);
+        }
+      }
+    }
+    &.away {
+      .head-bar {
+        padding-right: @px*@fix1024*46;
+        .padding-tri {
+          right: 0;
+          .triangle(@pkRed, @mainColor);
+        }
+      }
+    }
+  }
+
+  .body-left {
+    padding-left: @px*@fix1024*80;
+  }
+
+  .body-right {
+    padding-right: @px*@fix1024*80;
+  }
+
+  .peple-cmp {
+    text-align: center;
+    padding-top: @px*@fix1024*20;
+    color: #9b9b9b;
+    .pic-avator {
+      margin: @px*@fix1024*20 auto 0;
+      .avator(174);
+    }
+    .nickName {
+      margin: 10*@px*@fix1024;
+    }
+  }
+
+  .result-part {
+    background-color: @whiteGray;
+    line-height: @px*@fix1024*94;
+    padding: 0 10px;
+
+    .result {
+      border-bottom: 1px dashed @lightGray;
+    }
+
+    span {
+      margin-right: 5px; 
+    }
+  }
+
+  .winner-info {
+    .result-bar {
+      line-height: @px*@fix1024*96;
+      text-align: center;
+      position: relative;
+      background-color: @mainColor;
+      color: @white;
+      font-size: 14px;
+      padding: 0 @px*@fix1024*46;
+
+      .label {
+        margin-left: 10px; 
+      }
+
+      .left-tri {
+        .triangle(@mainColor, @pkRed);
+        left: 0;
+      }
+      .right-tri {
+        .triangle(@pkRed, @mainColor);
+        right: 0;
+      }
+    }
+    .avator-part {
+      padding-top: 10px;
+      img {
+        .avator(174);
+        margin: 0 auto;
+      }
+    }
+    .winner-name {
+      text-align: center;
+      line-height: @px*@fix1024*90;
+    }
+  }
+  .close {
+    position: absolute;
+    bottom: @px*@fix1024*140;
+    left: 50%;
+    color: @white;
+    width: @px*@fix1024*150;
+    line-height: @px*@fix1024*150;
+    font-size: 36px;
+    font-weight: 100;
+    text-align: center;
+    margin-left: -@px*@fix1024*75;
+    border-radius: 50%;
+    background-color: #404040;
+  }
+  
+}

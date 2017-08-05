@@ -1,6 +1,8 @@
 <template>
   <div class="buy-list-page page">
-    <div class="list-container">
+    <detail-cmp :open="detailPopupStatus" @closePopup="closePopup" />
+    <div :class="`list-container ${detailPopupStatus ? 'blur': ''}`">
+      <div class="empty-tips" v-if="noRecord">暂无更多数据</div>
       <div class="item" v-for="item in list" :key="item.id">
         <div class="info-part">
           <div class="pic-part">
@@ -23,13 +25,14 @@
             <div v-if="item.type !== 'waiting'"><span>获胜号码: </span><span class="red-cl">{{item.winNumber}}</span></div>
           </div>
         </div>
-        <div class="action-part"><div class="btn">查看详情</div></div>
+        <div class="action-part"><div class="btn" @click="openDetail">查看详情</div></div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import detailCmp from './battle-details'
 import {make} from '@/lib/mock'
 const template = {
   type: ['win', 'unwin', 'waiting', true],
@@ -49,9 +52,24 @@ const template = {
 }
 const list = make(template, 10)
 export default {
+  components: {detailCmp},
+  computed: {
+    noRecord: function () {
+      return !list || list.length === 0
+    }
+  },
   data () {
     return {
-      list
+      list,
+      detailPopupStatus: false
+    }
+  },
+  methods: {
+    openDetail: function () {
+      this.detailPopupStatus = true
+    },
+    closePopup: function () {
+      this.detailPopupStatus = false
     }
   }
 }

@@ -1,7 +1,20 @@
+@import './battle-details.less';
+
+.blur {
+  filter: blur(8px);
+}
+
 .buy-list-page {
+  position: relative;
   .list-container {
     max-height: 10vh;
     font-size: 12px;
+  }
+  .empty-tips {
+    padding-top: 30px;
+    text-align: center;
+    color: @lightestGray;
+    font-size: 14px;
   }
   .item {
     padding-top: 10px;
