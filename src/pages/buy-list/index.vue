@@ -1,7 +1,7 @@
 <template>
   <div class="buy-list-page page">
     <quick-link :linksArray="['personal', 'time', 'home']" />
-    <detail-cmp :open="detailPopupStatus" @closePopup="closePopup" />
+    <detail-cmp :open="detailPopupStatus" @closePopup="closePopup" :details="currentDetails" />
     <div :class="`list-container ${detailPopupStatus ? 'blur': ''}`">
       <div class="empty-tips" v-if="noRecord">暂无更多数据</div>
       <div class="item" v-for="item in list" :key="item.id">
@@ -26,7 +26,7 @@
             <div v-if="item.type !== 'waiting'"><span>获胜号码: </span><span class="red-cl">{{item.winNumber}}</span></div>
           </div>
         </div>
-        <div class="action-part"><div class="btn" @click="openDetail">查看详情</div></div>
+        <div class="action-part"><div class="btn" @click="openDetail(item.id)">查看详情</div></div>
       </div>
     </div>
   </div>
@@ -36,39 +36,28 @@
 import detailCmp from './battle-details'
 import quickLink from '@/components/quick-link'
 import utils from '@/lib/utils'
-import {make} from '@/lib/mock'
-const template = {
-  type: ['win', 'unwin', 'waiting', true],
-  picSrc: '../../static/img/p1.png',
-  title: '联通100元充值卡',
-  canyu: 'tyy',
-  takePartDate: '2017-06-30',
-  takePartTime: '15:00:06',
-  duanHao: {
-    start: 22,
-    end: 55
-  },
-  num: 34,
-  openTime: '14:10:01',
-  openDate: '2017-07-26',
-  winNumber: 105
-}
-const list = make(template, 10)
+import api from './api'
+
 export default {
   components: {detailCmp, quickLink},
   computed: {
     noRecord: function () {
-      return !list || list.length === 0
+      return !this.list || this.list.length === 0
     }
+  },
+  beforeMount () {
+    this.list = api.getList()
   },
   data () {
     return {
-      list,
+      list: [],
+      currentDetails: {},
       detailPopupStatus: false
     }
   },
   methods: {
-    openDetail: function () {
+    openDetail: function (id) {
+      this.currentDetails = api.getDetails(id)
       this.detailPopupStatus = true
       utils.dom.bodyDisableScroll()
     },

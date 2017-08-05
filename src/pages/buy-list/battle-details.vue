@@ -2,41 +2,41 @@
   <div v-if="open" class="details-popup">
     <div class="cover"></div>
     <div class="battle-content" >
-      <div class="title bg-white"><span class="red-cl">{{`${title.price}元`}}</span><span>联通充值卡</span></div>
+      <div class="title bg-white"><span class="red-cl">{{`${details.title.price}元`}}</span><span>联通充值卡</span></div>
       <div class="pk-part flex bg-white">
         <div class="home peple flex-1">
           <div class="head-bar">
             <span class="padding-tri"></span>
-            <span>{{`${home.randge.start} - ${home.randge.end}`}}</span>
+            <span>{{`${details.home.randge.start} - ${details.home.randge.end}`}}</span>
           </div>
-          <div class="body-left"><peple :info="home" /></div>
+          <div class="body-left"><peple :info="details.home" /></div>
         </div>
         <div class="pk-pic"></div>
         <div class="away peple flex-1">
           <div class="head-bar">
             <span class="padding-tri"></span>
-            <span>{{`${home.randge.start} - ${home.randge.end}`}}</span>
+            <span>{{`${details.away.randge.start} - ${details.away.randge.end}`}}</span>
           </div>
-          <div class="body-right"><peple :info="home" /></div>
+          <div class="body-right"><peple :info="details.away" /></div>
         </div>
       </div>
       <div class="result-part font-14">
-        <div class="result"><span>开奖结果</span><span class="red-cl">{{result}}</span><span class="font-12 gray-cl">({{dateTime}})</span></div>
-        <div class="rulse"><span>夺宝规则:</span><span>{{rulseText}}</span></div>
+        <div class="result"><span>开奖结果</span><span class="red-cl">{{details.result}}</span><span class="font-12 gray-cl">({{details.dateTime}})</span></div>
+        <div class="rulse"><span>夺宝规则:</span><span>{{details.rulseText}}</span></div>
       </div>
       <div class="winner-info bg-white">
         <div class="result-bar">
           <span class="left-tri"></span>
           <span>开奖结果: </span>
-          <span>{{winNum}}</span>
+          <span>{{details.winNum}}</span>
           <span class="label">获奖号段: </span>
-          <span>{{`${randge.start}-${randge.end}`}}</span>
+          <span>{{`${details.randge.start}-${details.randge.end}`}}</span>
           <span class="right-tri"></span>
         </div>
         <div class="avator-part">
-          <img :src="winnerSrc" />
+          <img :src="details.winnerSrc" />
         </div>
-        <div class="winner-name"><span class="red-cl">获奖者: </span><span class="yellow-cl">{{winnerName}}</span></div>
+        <div class="winner-name"><span class="red-cl">获奖者: </span><span class="yellow-cl">{{details.winnerName}}</span></div>
       </div>
     </div>
     <div class="close iconfont icon-guanbi" @click="closeMe"></div>
@@ -45,7 +45,7 @@
 
 <script>
 export default {
-  props: ['open'],
+  props: ['open', 'details'],
   components: {
     'peple': {
       props: ['info'],
@@ -61,32 +61,6 @@ export default {
   },
   data () {
     return {
-      title: {
-        price: 100,
-        content: '联通卡'
-      },
-      rulseText: '除以52的余数',
-      result: '12551',
-      dateTime: '2017-04-30 14:00:52',
-      winNum: '101',
-      randge: {
-        start: 20,
-        end: 52
-      },
-      winnerName: '王二',
-      winnerSrc: '../../static/img/p1.png',
-      home: {
-        randge: {
-          start: 10,
-          end: 20
-        },
-        date: '2017-06-22',
-        time: '10:21:11',
-        picSrc: '../../static/img/p1.png',
-        nickName: 'tyy',
-        from: '山东青岛',
-        ip: '192.168.0.1'
-      }
     }
   },
   methods: {

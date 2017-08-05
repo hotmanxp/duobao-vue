@@ -38,35 +38,22 @@
 
 <script>
 import classnames from 'classnames'
-import {make} from '@/lib/mock'
+import api from './api'
 import noticeBar from '../../components/top-notice'
 import recordList from '../../components/record-list'
 
-const productTemp = {
-  prodSrc: idx => `../../static/img/p${idx + 1}.png`,
-  price: idx => idx + 50
-}
-let products = make(productTemp, 6)
-let recordTemp = {
-  num: idx => idx,
-  recordContent: '100元联通充值卡',
-  userInfo: {
-    nickName: '老亚平',
-    from: '山东青岛'
-  },
-  date: '2017/06/30',
-  time: '11:49:59',
-  src: idx => `../../static/img/p${idx % 6 + 1}.png`
-}
-let records = make(recordTemp, 10)
 export default {
   name: 'index-page',
+  beforeMount () {
+    this.records = api.getRecord()
+    this.products = api.getProduct()
+  },
   data () {
     let notices = ['恭喜 胡柚获胜2单', '恭喜 胡柚获胜3单', '恭喜 胡柚获胜4单']
     return {
       notices,
-      products,
-      records,
+      products: [],
+      records: [],
       currentTab: 'win',
       next: {
         mins: 35,

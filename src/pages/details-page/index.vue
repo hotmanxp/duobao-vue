@@ -78,51 +78,33 @@
 
 <script>
 // import classnames from 'classnames'
-import {make} from '@/lib/mock'
+import api from './api'
 import utils from '@/lib/utils'
 import quickLink from '@/components/quick-link'
 import noticeBar from '../../components/top-notice'
 import menuItems from '../../components/menu-item'
 import recordList from '../../components/record-list'
 import buyPennal from './buy'
-let topTemp = {
-  num: idx => idx,
-  recordContent: idx => `刚刚获胜夺得商品${idx + 1}单`,
-  userInfo: {
-    nickName: '老亚平',
-    from: '山东青岛'
-  },
-  date: '2017/06/30',
-  time: '11:49:59',
-  src: idx => `../../static/img/p${idx % 6 + 1}.png`
-}
-let topList = make(topTemp, 20)
-let latestTemp = {
-  num: idx => idx,
-  text: '刚刚参与了',
-  userInfo: {
-    nickName: '老亚平',
-    from: '山东青岛'
-  },
-  date: '2017/06/30',
-  time: '11:49:59',
-  src: idx => `../../static/img/p${idx % 6 + 1}.png`
-}
-let latestRecords = make(latestTemp, 15)
+
 export default {
+  name: 'detail-page',
+  beforeMount () {
+    this.topList = api.getTops()
+    this.latestRecords = api.getLastes()
+  },
   data () {
     return {
       title: '100元联通充值卡',
       price: '55.00',
       buyPannelOpen: false,
-      latestRecords,
+      latestRecords: [],
       competition: {
         lastStart: 56,
         lastEnd: 110,
         mins: '06',
         second: '32'
       },
-      topList
+      topList: []
     }
   },
   methods: {

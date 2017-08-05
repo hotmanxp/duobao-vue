@@ -14,22 +14,20 @@
 </template>
 
 <script>
-import {make} from '@/lib/mock'
 import tabs from '@/components/tabs/tabs'
+import api from './api'
 const tabsData = [{text: '今日'}, {text: '7日'}, {text: '30日'}]
-let tmp = {
-  rand: (idx) => idx + 1,
-  name: '王银辉',
-  src: idx => `../../static/img/p${idx % 6 + 1}.png`,
-  num: (idx) => idx + 5
-}
-const list = make(tmp, 25)
+
 export default {
   components: {tabs},
+  name: 'top-list',
+  beforeMount () {
+    this.list = api.getTops()
+  },
   data () {
     return {
       tabsData,
-      list
+      list: []
     }
   },
   methods: {
