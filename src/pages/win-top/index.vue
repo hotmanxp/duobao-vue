@@ -16,7 +16,7 @@
 <script>
 import tabs from '@/components/tabs/tabs'
 import api from './api'
-const tabsData = [{text: '今日'}, {text: '7日'}, {text: '30日'}]
+import { tabsData } from './consts'
 
 export default {
   components: {tabs},
