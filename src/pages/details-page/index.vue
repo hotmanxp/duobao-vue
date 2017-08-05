@@ -1,5 +1,6 @@
 <template>
   <div class="details-page page">
+    <quick-link :linksArray="['personal', 'time', 'home']" />
     <notice-bar :notices="['通知： 每天凌晨2点 谢谢谢谢谢谢']" />
     <div class="detail-banner">
       <img :src="'../../static/img/detail-banner.png'" class="banner-pic"/>
@@ -79,6 +80,7 @@
 // import classnames from 'classnames'
 import {make} from '@/lib/mock'
 import utils from '@/lib/utils'
+import quickLink from '@/components/quick-link'
 import noticeBar from '../../components/top-notice'
 import menuItems from '../../components/menu-item'
 import recordList from '../../components/record-list'
@@ -133,6 +135,6 @@ export default {
       utils.dom.bodyEnableScroll()
     }
   },
-  components: { noticeBar, menuItems, recordList, buyPennal }
+  components: { noticeBar, menuItems, recordList, buyPennal, quickLink }
 }
 </script>

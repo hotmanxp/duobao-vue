@@ -10,7 +10,7 @@
       <div class="tips">参与单数</div>
       <div class="step">
         <span :class="`btn ${currentCounter === 1? 'disabled' : ''  }`" @click="onChange(-1)">-</span>
-        <input class="num-input" :value="currentCounter" />
+        <input class="num-input" v-model="currentCounter" />
         <span class="btn" @click="onChange(1)">+</span>
       </div>
       <div class="count-btns">

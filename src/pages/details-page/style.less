@@ -58,7 +58,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      z-index: 10;
+      z-index: @normal-low-z;
       background-color: @darkGray;
     }
 
@@ -158,7 +158,7 @@
   .history-part {
     padding-top: 10px;
     position: relative;
-    z-index: 10;
+    z-index: @normal-low-z;
     background-color: #f3f3f3;
 
     .section-divider {
@@ -169,7 +169,7 @@
   .action-part {
     position: fixed;
     background-color: @darkGray;
-    z-index: 1000;
+    z-index: @tabBar-z;
     left: 0;
     bottom: 0;
     height: @px*125;

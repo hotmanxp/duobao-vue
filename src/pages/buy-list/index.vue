@@ -1,5 +1,6 @@
 <template>
   <div class="buy-list-page page">
+    <quick-link :linksArray="['personal', 'time', 'home']" />
     <detail-cmp :open="detailPopupStatus" @closePopup="closePopup" />
     <div :class="`list-container ${detailPopupStatus ? 'blur': ''}`">
       <div class="empty-tips" v-if="noRecord">暂无更多数据</div>
@@ -33,6 +34,7 @@
 
 <script>
 import detailCmp from './battle-details'
+import quickLink from '@/components/quick-link'
 import utils from '@/lib/utils'
 import {make} from '@/lib/mock'
 const template = {
@@ -53,7 +55,7 @@ const template = {
 }
 const list = make(template, 10)
 export default {
-  components: {detailCmp},
+  components: {detailCmp, quickLink},
   computed: {
     noRecord: function () {
       return !list || list.length === 0
