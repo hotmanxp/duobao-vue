@@ -78,6 +78,7 @@
 <script>
 // import classnames from 'classnames'
 import {make} from '@/lib/mock'
+import utils from '@/lib/utils'
 import noticeBar from '../../components/top-notice'
 import menuItems from '../../components/menu-item'
 import recordList from '../../components/record-list'
@@ -125,9 +126,11 @@ export default {
   methods: {
     openPanel: function (type) {
       this.buyPannelOpen = true
+      utils.dom.bodyDisableScroll()
     },
     closePannel: function (type) {
       this.buyPannelOpen = false
+      utils.dom.bodyEnableScroll()
     }
   },
   components: { noticeBar, menuItems, recordList, buyPennal }

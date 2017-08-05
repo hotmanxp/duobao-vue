@@ -40,6 +40,12 @@ html {
 
 .page {
   padding-top: @menu-bar-height;
+  &.has-top-tab {
+    padding-top: @menu-bar-height + @tabHight;
+  }
+  &.has-bottom-tab {
+    padding-bottom: @tabHight;
+  }
 }
 
 .main-cl {
@@ -72,11 +78,8 @@ html {
   flex: 1;
 }
 
-.avator (@d) {
-  display: block;
-  border-radius: 50%;
-  width: @d * @px;
-  height: @d * @px;
+.font-16 {
+  font-size: 16px;
 }
 
 .font-14 {
@@ -85,6 +88,18 @@ html {
 
 .font-12 {
   font-size: 12px;
+}
+
+.avator (@d) {
+  display: block;
+  border-radius: 50%;
+  width: @d * @px;
+  height: @d * @px;
+}
+
+.disabledBg (@cl) {
+  background-color: lighten(@cl, 20%);
+  pointer-events: none;
 }
 
 

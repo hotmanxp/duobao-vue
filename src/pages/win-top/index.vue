@@ -1,5 +1,5 @@
 <template>
-  <div class="win-top-page page">
+  <div class="win-top-page page has-bottom-tab">
     <div class="list-container">
       <div v-for="item in list" :class="`item flex ${getPriceIcon(item.rand)}`"  :key="item.id ">
         <div v-if="item.rand < 4" class="rand"><span :class="`iconfont icon-${getPriceIcon(item.rand)}`"/></div>

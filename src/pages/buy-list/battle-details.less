@@ -56,10 +56,10 @@
     width: 0;
     line-height: 0;
     height: 0;
-    border-top: @px*@fix1024*48;
-    border-bottom: @px*@fix1024*48;
-    border-left: @px*@fix1024*23;
-    border-right: @px*@fix1024*23;
+    border-top: 17px;
+    border-bottom: 17px;
+    border-left: 10px;
+    border-right: 10px;
     border-color: @backCl @fontCl @fontCl @backCl;
     border-style: solid; 
   }
@@ -67,8 +67,8 @@
   .peple {
     .head-bar {
       background-color: @mainColor;
-      line-height: @px*@fix1024 * 96;
-      height: @px*@fix1024 *96;
+      line-height:34px;
+      height: 34px;
       color: @white;
       font-size: 16px;
       text-align: center;
@@ -76,7 +76,7 @@
     }
     &.home {
       .head-bar {
-        padding-left: @px*@fix1024*46;
+        padding-left: 20px;
         .padding-tri {
           left: 0;
           .triangle(@mainColor,@pkRed);
@@ -85,7 +85,7 @@
     }
     &.away {
       .head-bar {
-        padding-right: @px*@fix1024*46;
+        padding-right: 20px;
         .padding-tri {
           right: 0;
           .triangle(@pkRed, @mainColor);
@@ -131,13 +131,13 @@
 
   .winner-info {
     .result-bar {
-      line-height: @px*@fix1024*96;
+      line-height: 34px;
       text-align: center;
       position: relative;
       background-color: @mainColor;
       color: @white;
       font-size: 14px;
-      padding: 0 @px*@fix1024*46;
+      padding: 0 20px;
 
       .label {
         margin-left: 10px; 

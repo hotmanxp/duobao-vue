@@ -33,6 +33,7 @@
 
 <script>
 import detailCmp from './battle-details'
+import utils from '@/lib/utils'
 import {make} from '@/lib/mock'
 const template = {
   type: ['win', 'unwin', 'waiting', true],
@@ -67,9 +68,11 @@ export default {
   methods: {
     openDetail: function () {
       this.detailPopupStatus = true
+      utils.dom.bodyDisableScroll()
     },
     closePopup: function () {
       this.detailPopupStatus = false
+      utils.dom.bodyEnableScroll()
     }
   }
 }
