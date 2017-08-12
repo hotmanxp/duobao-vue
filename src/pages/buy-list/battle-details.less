@@ -28,7 +28,6 @@
     bottom: 0;
     border-radius: 20 * @px*@fix1024; 
     margin: auto;
-    overflow: hidden;
 
     .pk-part {
       align-items: flex-start;
@@ -165,8 +164,8 @@
     }
   }
   .close {
-    position: absolute;
-    bottom: 2.72549vw;
+    position: relative;
+    top: 10px;
     left: 50%;
     color: @white;
     width: @px*@fix1024*150;
@@ -183,9 +182,7 @@
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    margin-left: -@px*@fix1024*75;
-    left: 50%;
-    bottom: 17.215686vw;
+    margin: 9px auto;
     position: relative;
     background: linear-gradient(
       to top,
