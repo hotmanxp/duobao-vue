@@ -1,6 +1,6 @@
 <template>
   <div :class="`tabs-cmp ${customClass || ''}`">
-    <div v-for="(tab, idx)  in tabs" :key="tab.value" :class="`tab ${current === idx ? 'active' : ''}`" @click="onChange(idx)">{{tab.text}}</div>
+    <div v-for="(tab, idx)  in tabs" :key="tab.value" :class="`tab ${currentIdx === idx ? 'active' : ''}`" @click="onChange(idx)">{{tab.text}}</div>
   </div>
 </template>
 
@@ -9,10 +9,21 @@ export default {
   props: {
     tabs: Array,
     customClass: String,
-    current: Number
+    defaultTabIdx: Number
+  },
+  data () {
+    return {
+      current: null
+    }
+  },
+  computed: {
+    currentIdx: function () {
+      return this.current === null ? this.defaultTabIdx : this.current
+    }
   },
   methods: {
     onChange: function (idx) {
+      this.current = idx
       this.$emit('tabChange', idx)
     }
   }
