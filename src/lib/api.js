@@ -14,7 +14,7 @@ const _fetch = (url, method, params) => {
       'Accept': 'application/json, text/plain, */*',
       'Content-Type': 'application/json'
     },
-    method: method === 'post' ? 'POST' : 'GET',
+    method: method === 'post' || method === 'POST' ? 'POST' : 'GET',
     body: fetchParams
   }
   ).then(res => res.json())
