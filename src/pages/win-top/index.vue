@@ -9,7 +9,7 @@
         <div class="gray-cl flex-1">已中奖<span class="red-cl">{{item.num}}</span>单</div>
       </div>
     </div>
-    <tabs :tabs="tabsData" customClass="history-tab" :current="0" />
+    <tabs :tabs="tabsData" customClass="history-tab" :defaultTabIdx="0" />
   </div>
 </template>
 

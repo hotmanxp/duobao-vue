@@ -2,13 +2,12 @@
   <div class='change-history-page page'>
     <div class="tab-parts">
       <tabs :tabs="globalTabs"
-        @tabChange="globalTabChange"
-        :current="globalCurrentTab"
+        :defaultTabIdx="0"
         customClass="history-tab"
         />    
       <tabs :tabs="subTabs"
         @tabChange="subTabChange"
-        :current="subCurrentTab"
+        :defaultTabIdx="0"
         customClass="triangle-tab"
         />
     </div>
@@ -34,10 +33,10 @@ export default {
   },
   methods: {
     globalTabChange: function (idx) {
-      this.globalCurrentTab = idx
+      //
     },
     subTabChange: function (idx) {
-      this.subCurrentTab = idx
+      //
     }
   }
 }
