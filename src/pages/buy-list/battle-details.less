@@ -28,7 +28,6 @@
     bottom: 0;
     border-radius: 20 * @px*@fix1024; 
     margin: auto;
-    overflow: hidden;
 
     .pk-part {
       align-items: flex-start;
@@ -165,8 +164,8 @@
     }
   }
   .close {
-    position: absolute;
-    bottom: @px*@fix1024*140;
+    position: relative;
+    top: 10px;
     left: 50%;
     color: @white;
     width: @px*@fix1024*150;
@@ -177,6 +176,21 @@
     margin-left: -@px*@fix1024*75;
     border-radius: 50%;
     background-color: #404040;
+  }
+
+  .circle-test {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 9px auto;
+    position: relative;
+    background: linear-gradient(
+      to top,
+      transparent 0%,
+      transparent 60%,
+      rgba(0, 0, 0, 0.5) 60%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
   }
   
 }
