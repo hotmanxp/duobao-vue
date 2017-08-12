@@ -38,8 +38,10 @@
         </div>
         <div class="winner-name"><span class="red-cl">获奖者: </span><span class="yellow-cl">{{details.winnerName}}</span></div>
       </div>
+      <div class="circle-test">
+        <div class="close iconfont icon-guanbi" @click="closeMe"></div>
+      </div>
     </div>
-    <div class="close iconfont icon-guanbi" @click="closeMe"></div>
   </div>
 </template>
 
