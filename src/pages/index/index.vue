@@ -44,9 +44,9 @@ import recordList from '../../components/record-list'
 
 export default {
   name: 'index-page',
-  beforeMount () {
-    this.records = api.getRecord()
-    this.products = api.getProduct()
+  async beforeMount () {
+    this.records = await api.getRecord()
+    this.products = await api.getProduct()
   },
   data () {
     let notices = ['恭喜 胡柚获胜2单', '恭喜 胡柚获胜3单', '恭喜 胡柚获胜4单']

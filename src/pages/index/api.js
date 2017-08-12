@@ -4,9 +4,9 @@ const route = Urls.HOME
 
 export default {
   getProduct: () => {
-    return []
+    return apiTools.apiFetch(route.GET_PRODUCTS, {})
   },
   getRecord: () => {
-    return apiTools.apiFetch(route.GET_RECORD, {})
+    return apiTools.apiFetch(route.GET_RECORDS, {})
   }
 }

@@ -3,7 +3,7 @@ const toQuery = (params = {}) => Object.keys(params).reduce((acc, key, idx) => {
   return acc + (idx !== 0 ? '&&' : '') + `${key}=${params[key]}`
 }, '?')
 
-const fetch = (url, method, params) => {
+const _fetch = (url, method, params) => {
   url = baseUrl + url
   let isGet = method === 'get' || method === 'GET'
   let fetchUrl = isGet ? url + toQuery(params) : url
@@ -19,9 +19,8 @@ const fetch = (url, method, params) => {
   }
   ).then(res => res.json())
 }
-const apiFetch = ({method, url}, params) => fetch(url, method, params)
+const apiFetch = ({method, url}, params) => _fetch(url, method, params)
 
 export default {
-  apiFetch,
-  fetch
+  apiFetch
 }

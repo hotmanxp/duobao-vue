@@ -25,4 +25,8 @@ router.get('/record-list', (req, res) => {
   res.send(records)
 })
 
+router.get('/product-list', (req, res) => {
+  res.send(products)
+})
+
 export default router
