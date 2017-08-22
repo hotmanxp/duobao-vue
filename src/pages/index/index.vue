@@ -44,7 +44,7 @@ import recordList from '../../components/record-list'
 
 export default {
   name: 'index-page',
-  async beforeMount () {
+  async mounted () {
     this.records = await api.getRecord()
     this.products = await api.getProduct()
   },

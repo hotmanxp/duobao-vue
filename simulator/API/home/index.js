@@ -12,7 +12,7 @@ let recordTemp = {
   num: idx => idx,
   recordContent: '100元联通充值卡',
   userInfo: {
-    nickName: '老亚平',
+    nickName: '老亚平2',
     from: '山东青岛'
   },
   date: '2017/06/30',
