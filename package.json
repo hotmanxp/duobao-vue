@@ -11,7 +11,8 @@
     "lint": "eslint --ext .js,.vue src",
     "server:start": "pm2 start ./simulator/index.js --name=simulator ",
     "server:stop": "pm2 stop simulator || exit 0",
-    "server:restart": "run-s server:stop server:start"
+    "server:restart": "run-s server:stop server:start",
+    "pm2log": "pm2 log"
   },
   "dependencies": {
     "classnames": "^2.2.5",
