@@ -18,8 +18,10 @@
     "classnames": "^2.2.5",
     "lodash": "^4.17.4",
     "npm-run-all": "^4.0.2",
+    "socket.io": "^2.0.3",
     "vue": "^2.3.3",
-    "vue-router": "^2.6.0"
+    "vue-router": "^2.6.0",
+    "ws": "^3.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

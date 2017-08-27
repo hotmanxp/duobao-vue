@@ -1,6 +1,5 @@
 <template>
   <div class="index-page page">
-    <notice-bar :notices="notices" />
     <div class="banner-part">
       <img src="../../assets/banner-1.jpg" />
     </div>
